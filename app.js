@@ -7,6 +7,7 @@ app.use(express.json());
 //Config AWS
 const creds = new AWS.SharedIniFileCredentials({profile: 'default'});
 const sns = new AWS.SNS({creds,region: 'us-east-1'});
+const topicArn = "enter your topic arn";
 
 
 //Routes
@@ -17,7 +18,7 @@ app.get('/status' , (req,res) =>{
 app.post('/subscribe' ,(req,res)=>{
     let params ={
         Protocol: 'EMAIL',
-        TopicArn: 'arn:aws:sns:us-east-1:123191721163:assignmentTopic',
+        TopicArn: `${topicArn}`,
         Endpoint: req.body.email
     }
 
@@ -32,7 +33,7 @@ app.post('/publish' , (req,res)=>{
     let params ={
          Subject :req.body.Subject,
          Message : req.body.Message,
-        TopicArn: 'arn:aws:sns:us-east-1:123191721163:assignmentTopic'
+        TopicArn: `${topicArn}`
     }
 
     sns.publish(params, (err , data)=>{
