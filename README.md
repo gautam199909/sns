@@ -3,6 +3,7 @@
 Before run this app follow this steps:
  1)Configure Your AWS: Your aws key and secret code and your server location
  2)Run command in terminal to install all depenency: npm install
+ 3)Enter your Topic Arn in variable : "topicArn"
  3)To run the application use command : node app.js
 ```
  
