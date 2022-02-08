@@ -6,7 +6,13 @@
  3)To run the application use command : node app.js
  
 # API for publishing
- 'http://localhost:3000/subscribe'
+ http://localhost:3000/subscribe
 
 # API for subscribing
-  'http://localhost:3000/publish'
+  http://localhost:3000/publish
+
+# Getting the status of the SNS
+  http://localhost:3000/publish
+  
+  
+ 
